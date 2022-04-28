@@ -434,19 +434,11 @@ public class AudioObject : RegisteredComponent
     {
         get
         {
-#if UNITY_5_OR_NEWER
             return primaryAudioSource.panStereo;
-#else
-           return primaryAudioSource.pan;
-#endif
         }
         set
         {
-#if UNITY_5_OR_NEWER
             primaryAudioSource.panStereo = value;
-#else
-            primaryAudioSource.pan = value;
-#endif
         }
     }
     
@@ -1110,11 +1102,7 @@ public class AudioObject : RegisteredComponent
        _audioSource2.maxDistance = _audioSource1.maxDistance;
        _audioSource2.dopplerLevel = _audioSource1.dopplerLevel;
        _audioSource2.spread = _audioSource1.spread;
-#if UNITY_5_OR_NEWER
        _audioSource2.spatialBlend = _audioSource1.spatialBlend;
-#else
-       _audioSource2.panLevel = _audioSource1.panLevel;
-#endif
        _audioSource2.velocityUpdateMode = _audioSource1.velocityUpdateMode;
        _audioSource2.ignoreListenerVolume = _audioSource1.ignoreListenerVolume;
        _audioSource2.playOnAwake = false;

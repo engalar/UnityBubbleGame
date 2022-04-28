@@ -2793,12 +2793,8 @@ public class AudioController : SingletonMonoBehaviour<AudioController>
         audioObjInstance.name = "AudioObject:" + sndObj.primaryAudioSource.clip.name;
 
         sndObj.primaryAudioSource.pitch = AudioObject.TransformPitch( subItem.PitchShift );
-#if UNITY_5_OR_NEWER
         sndObj.primaryAudioSource.panStereo = subItem.Pan2D;
         sndObj.primaryAudioSource.spatialBlend = audioItem.spatialBlend;
-#else
-        sndObj.primaryAudioSource.pan = subItem.Pan2D;
-#endif
 
         if ( subItem.RandomStartPosition )
         {

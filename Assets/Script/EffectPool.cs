@@ -45,7 +45,7 @@ public class EffectPool : MonoBehaviour {
 
 	IEnumerator Recycle(ParticleSystem particle)
 	{
-		float time = particle.duration;
+		float time = particle.main.duration;
 		yield return new WaitForSeconds(time +0.1f);
 		pool.Despawn (particle.transform);
 	}
