@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Runtime.InteropServices;
 
 public class GameUIBox : UIBoxBase {
 
@@ -52,9 +53,11 @@ public class GameUIBox : UIBoxBase {
 	void ScoreChangeUpdate()
 	{
 		scoreText.text = this.scoreTemp.ToString ();
+		MXScoreChange(scoreText.text);
 	}
 
-
+  [DllImport("__Internal")]
+  private static extern void MXScoreChange(string str);
 
 
 	public void OnPauseBtnClick()
