@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | 天天萌泡泡</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=480 height=800 style="width: 480px; height: 800px; background: #231F20"></canvas>
+    <script src="Build/buble.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/buble.data.gz",
+        frameworkUrl: "Build/buble.framework.js.gz",
+        codeUrl: "Build/buble.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "SuperZhan",
+        productName: "天天萌泡泡",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
